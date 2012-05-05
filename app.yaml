@@ -1,0 +1,23 @@
+application: cptudacity
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+
+- url: /
+  script: main.app
+
+#udacity homework assignments
+
+- url: /unit1/helloworld(/.*)?
+  script: unit1.helloworld.app
+
+- url: /unit2/rot13(/.*)?
+  script: unit2.rot13.app
+
+- url: /unit2/signup(/.*)?
+  script: unit2.signup.app
+
