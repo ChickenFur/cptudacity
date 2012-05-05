@@ -106,4 +106,4 @@ class WelcomePage(webapp2.RequestHandler):
     self.response.out.write(string)
 
 
-app = webapp2.WSGIApplication([('/unit2/signup/', MainPage), ('/unit2/signup/welcome', WelcomePage)], debug=True)
+app = webapp2.WSGIApplication([('/unit2/signup', MainPage), ('/unit2/signup/welcome', WelcomePage)], debug=True)
