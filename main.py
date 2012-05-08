@@ -9,11 +9,15 @@ Project 1 <a href = "/unit1/helloworld"> Hello World </a>
 </div>
 
 <div>
-Project 2 <a href ="/unit2/rot13"> Rot 13  </a>
+Project 2 rot13 <a href ="/unit2/rot13"> Rot 13  </a>
 </div>
 <div>
-Project 3 <a href = "/unit2/signup"> Signup </a>
+Project 2 Signup <a href = "/unit2/signup"> Signup </a>
 </div>
+<div>
+Project 3 Blog	<a href = "/unit3/blog"> Blog </a>
+</div>
+
 """
 
 

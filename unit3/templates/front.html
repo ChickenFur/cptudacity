@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>My First Blog </title>
+	</head>
+
+	<body>
+		<h1>The Amazing Blog!</hq1>
+	</body>
+	<div align=right>
+		<a href="/unit3/blog/newpost"> Create a New Post </a>
+	</div>
+
+
+	{% for post in posts %}
+
+	<hr>
+		<div class = "blogpost">
+			<div class="blog-title"><a href ="/unit3/blog/{{post.key().id()}}">{{post.title}}</a></div>
+
+			<div class = "blog-text">{{post.blogtext}}</div>
+		</div>
+	{% endfor %}
+
+
+
+	</hr>
+
+</html>

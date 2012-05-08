@@ -4,6 +4,10 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+libraries:
+- name: jinja2
+  version: latest
+
 handlers:
 
 
@@ -20,4 +24,7 @@ handlers:
 
 - url: /unit2/signup(/.*)?
   script: unit2.signup.app
+
+- url: /unit3/blog(/.*)?
+  script: unit3.blog.app
 
