@@ -8,7 +8,6 @@ template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
 							   autoescape=True)
 
-
 class Handler(webapp2.RequestHandler):
   def write(self, *a, **kw):
     self.response.out.write(*a, **kw)
@@ -21,7 +20,7 @@ class Handler(webapp2.RequestHandler):
     self.write(self.render_str(template, **kw))	
 
 def blog_key(name = 'default'):
-  return db.Key.from_path('blogs', name)
+  return db.Key.from_path('MyBlogs', name)
 
 
 class BlogPost(db.Model):
@@ -30,8 +29,6 @@ class BlogPost(db.Model):
   created = db.DateTimeProperty(auto_now_add = True)
   last_modified = db.DateTimeProperty(auto_now_add = True)
   
-
-
 
 class MainPage(Handler):
   def get(self):
@@ -63,12 +60,13 @@ class CreateBlogPost(Handler):
 
   def post(self):
     title = self.request.get("subject")
-    blogtext = self.request.get("text")
+    blogtext = self.request.get("content")
 
     if title and blogtext:
       b = BlogPost(parent = blog_key(), title = title, blogtext = blogtext)
       b.put()
-      self.redirect("/unit3/blog/%s"  % str(b.key().id()))
+
+      self.redirect("/unit3/blog/%s" % str(b.key().id()))
 
     else:
       error = "We need both a title and  blogtext"
