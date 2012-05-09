@@ -74,5 +74,6 @@ class CreateBlogPost(Handler):
 
 
 app = webapp2.WSGIApplication([ ('/unit3/blog', MainPage), 
-                                ('/unit3/blog/([0-9])', DisplayIndividualBlogPost),
+                                ('/unit3/blog/([0-9]+)', DisplayIndividualBlogPost),
                                 ('/unit3/blog/newpost', CreateBlogPost)], debug=True)
+
